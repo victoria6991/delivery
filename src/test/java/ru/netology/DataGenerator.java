@@ -57,8 +57,29 @@ public class DataGenerator {
 
     @Value
     public static class UserInfo {
+
+        public UserInfo(String city, String name, String phone) {
+            this.city = city;
+            this.name = name;
+            this.phone = phone;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
         String city;
         String name;
         String phone;
     }
+
+
 }
