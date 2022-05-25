@@ -23,14 +23,9 @@ public class DeliveryTesting {
         $(".checkbox__box").click();
         $(".button").click();
         $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + DataGenerator.generateDate(3)), Duration.ofSeconds(5));
-//      $(byXpath("//*[@data-test-id=\"success-notification\"]/*[@class=\"notification__content\"]").findElement(byText("Встреча успешно забронирована на ").+ DataGenerator.generateDate(3)).wait(15)));
-//          TODO ВОПРОС К ПРЕПОДАВАТЕЛЮ: Если использовать XPath, нельзя вместе с текстом
-//           использовать вызов метода в поиске по тексту?
-//           У меня не получилось, ошибку выдаёт.
-        $(".button").click();
-        $(".notification__content>button").click();
         $("[placeholder=\"Дата встречи\"]").sendKeys(Keys.CONTROL + "a" + Keys.DELETE);
         $("[placeholder=\"Дата встречи\"]").setValue(DataGenerator.generateDate(4));
+        $(".button").click();
         $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + DataGenerator.generateDate(4)), Duration.ofSeconds(5));
     }
 }

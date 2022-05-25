@@ -1,18 +1,12 @@
 package ru.netology;
 
 import com.github.javafaker.Faker;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class DataGenerator {
     private DataGenerator() {
     }
@@ -48,8 +42,6 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            // TODO: добавить логику для создания пользователя user с использованием методов generateCity(locale),
-            // generateName(locale), generatePhone(locale)
             UserInfo user = new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
             return user;
         }
@@ -57,25 +49,6 @@ public class DataGenerator {
 
     @Value
     public static class UserInfo {
-
-        public UserInfo(String city, String name, String phone) {
-            this.city = city;
-            this.name = name;
-            this.phone = phone;
-        }
-
-        public String getCity() {
-            return city;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
-
         String city;
         String name;
         String phone;
